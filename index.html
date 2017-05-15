@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <title>Page Title</title>
-    <meta name="keywords" content="Web, Project, Keywords">
-    <meta name="description" content="Description of the page">
+    <title>Next.</title>
+    <meta name="keywords" content="Music, Playlist, Spotify">
+    <meta name="description" content="Next is paired back playlist generator. The perfect blend of control and automation for quick and easy listening.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-2.2.0.js"></script>
     <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
 </head>
 <body>
     
@@ -20,9 +21,9 @@
         
         <div class="listContainer">
             <ul>
-                <li>New Playlist</li>
+                <li class="new">New Playlist</li>
                 <li>History</li>
-                <li>Credit</li>
+                <li><a href="http://joshwarner.co" target="_blank">Credit</a></li>
             </ul>
         </div>
         
@@ -32,8 +33,10 @@
         
         <h1 class="home">Next.</h1>
         
-        <div class="search">
-        </div>
+        <form class="search">
+          <label for="fname">Start a playlist</label>
+          <input type="text" placeholder="Type an artist or song name..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type an artist or song name...'" autocomplete="off" class="fsearch" name="fsearch">
+        </form>
         
         <ul class="grid">
             
@@ -47,7 +50,7 @@
             
             <li>
                 <div class="imgWrapper">
-                    <img src="img/cover.jpg" alt="">
+                    <img src="img/cover2.jpg" alt="">
                 </div>
                 <p><b>Song Name</b></p>
                 <p>Artist of the Song</p>
@@ -55,7 +58,7 @@
             
             <li>
                 <div class="imgWrapper">
-                    <img src="img/cover.jpg" alt="">
+                    <img src="img/cover3.jpg" alt="">
                 </div>
                 <p><b>Song Name</b></p>
                 <p>Artist of the Song</p>
@@ -88,7 +91,25 @@
         </ul>
         
         <div class="player">
-            test<br>
+            <div class="playerWrapper">
+                <img src="img/cover3.jpg" class="albumArt">
+                <div class="track">
+                    <p><b>Song Name</b><br>Artist of the Song</p>
+                </div>
+                <div class="control">
+                    <img src="img/play.png" alt="play" class="play">
+                    <img src="img/play.png" alt="skip" class="skip">
+                </div>
+                <div class="playback">
+                    <h6>0:00</h6>
+                    <div class="bar">
+                        <div class="songLength">
+                            <div class="songPosition"> </div>
+                        </div>
+                    </div>
+                    <h6>0:00</h6>
+                </div>
+            </div>
         </div>
         
     </div>
