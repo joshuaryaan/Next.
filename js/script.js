@@ -49,7 +49,17 @@ $(document).ready(function () {
         }
     });
 
-
+   //PLAY
+    $(".player .play").click(function() {
+        $(".play").hide(); 
+        $(".pause").show();     
+    }); 
+    //PAUSE
+    $(".player .pause").click(function() {
+        $(".pause").hide(); 
+        $(".play").show();     
+    }); 
+    
 });
 
 function play() {
@@ -67,8 +77,8 @@ function hidePlayer() {
 }
 
 function openMenu() {
-   $(".open").hide();
-    $(".close").show();
+   $(".open").fadeOut(100);
+    $(".close").delay(100).fadeIn(300);
     $(".page").css({
         "transform": "perspective( 100vw ) rotateY( 16deg )",
         "transform-origin": "left" 
@@ -104,8 +114,8 @@ function newSearch() {
             hidePlayer();
         }, 1000);
     $(".listContainer ul li").delay(400).hide(0);
-    $($(".grid li").get().reverse()).delay(400).each(function(i) {
+    $($(".grid li").get().reverse()).each(function(i) {
         $(this).delay(200 * i).animate({opacity: 0}, 700, function() { });
     });
-    $(".search").delay(2000).fadeIn(400);
+    $(".search").delay(1800).fadeIn(400);
 }

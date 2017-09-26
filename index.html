@@ -13,17 +13,17 @@
 <body>
     
     <div class="menuButton">
-        <h1 class="open">Menu</h1>
-        <h1 class="close">Close</h1>
+        <img src="img/menu.png" class="open">
+        <img src="img/close.png" class="close">
     </div>
 
     <div class="menu">
         
         <div class="listContainer">
             <ul>
-                <li class="new">New Playlist</li>
-                <li>History</li>
-                <li><a href="http://joshwarner.co" target="_blank">Credit</a></li>
+                <li class="new"><h2>New Playlist</h2></li>
+                <li><h2>History</h2></li>
+                <li><h2><a href="http://joshwarner.co" target="_blank">Credit</a></h2></li>
             </ul>
         </div>
         
@@ -34,8 +34,16 @@
         <h1 class="home">Next.</h1>
         
         <form class="search">
-          <label for="fname">Start a playlist</label>
-          <input type="text" placeholder="Type an artist or song name..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type an artist or song name...'" autocomplete="off" class="fsearch" name="fsearch">
+            <label for="fname">Start a playlist</label>
+            <input type="text" placeholder="Type an artist or song name..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type an artist or song name...'" autocomplete="off" class="fsearch" name="fsearch" list="suggestions">
+            <datalist id="suggestions">
+                <option value="Best to you - Blood Orange">
+                <option value="Multi-Love - Unknown Mortal Orchestra">
+                <option value="Internet Explorer">
+                <option value="Opera">
+                <option value="Safari">
+                <option value="Microsoft Edge">
+            </datalist>
         </form>
         
         <ul class="grid">
@@ -44,48 +52,48 @@
                 <div class="imgWrapper">
                     <img src="img/cover.jpg" alt="">
                 </div>
-                <p><b>Song Name</b></p>
-                <p>Artist of the Song</p>
+                <p><span><b>Streetcar</b></span></p>
+                <p><span>Daniel Caesar</span></p>
             </li>
             
             <li>
                 <div class="imgWrapper">
                     <img src="img/cover2.jpg" alt="">
                 </div>
-                <p><b>Song Name</b></p>
-                <p>Artist of the Song</p>
+                <p><span><b>Song Name</b></span></p>
+                <p><span>Artist of the Song</span></p>
             </li>
             
             <li>
                 <div class="imgWrapper">
                     <img src="img/cover3.jpg" alt="">
                 </div>
-                <p><b>Song Name</b></p>
-                <p>Artist of the Song</p>
+                <p><span><b>Augustine</b></span></p>
+                <p><span>Blood Orange</span></p>
             </li>
             
             <li>
                 <div class="imgWrapper">
                     <img src="img/cover.jpg" alt="">
                 </div>
-                <p><b>Song Name</b></p>
-                <p>Artist of the Song</p>
+                <p><span><b>Song Name</b></span></p>
+                <p><span>Artist of the Song</span></p>
             </li>
             
             <li>
                 <div class="imgWrapper">
                     <img src="img/cover.jpg" alt="">
                 </div>
-                <p><b>Song Name</b></p>
-                <p>Artist of the Song</p>
+                <p><span><b>Song Name</b></span></p>
+                <p><span>Artist of the Song</span></p>
             </li>
             
             <li>
                 <div class="imgWrapper">
                     <img src="img/cover.jpg" alt="">
                 </div>
-                <p><b>Song Name</b></p>
-                <p>Artist of the Song</p>
+                <p><span><b>Song Name</b></span></p>
+                <p><span>Artist of the Song</span></p>
             </li>
             
         </ul>
@@ -94,11 +102,12 @@
             <div class="playerWrapper">
                 <img src="img/cover3.jpg" class="albumArt">
                 <div class="track">
-                    <p><b>Song Name</b><br>Artist of the Song</p>
+                    <p><span><b>Best to You</b></span><br><span>Blood Orange</span></p>
                 </div>
                 <div class="control">
                     <img src="img/play.png" alt="play" class="play">
-                    <img src="img/play.png" alt="skip" class="skip">
+                    <img src="img/pause.png" alt="play" class="pause">
+                    <img src="img/next.png" alt="skip" class="skip">
                 </div>
                 <div class="playback">
                     <h6>0:00</h6>
@@ -107,7 +116,7 @@
                             <div class="songPosition"> </div>
                         </div>
                     </div>
-                    <h6>0:00</h6>
+                    <h6>3:25</h6>
                 </div>
             </div>
         </div>
