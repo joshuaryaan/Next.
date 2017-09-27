@@ -264,7 +264,7 @@ a {
 
 .player .albumArt {
     height: 40px;
-    width: 40px;
+    width=: 40px;
     background-color: #b3b3b3;
     margin: 10px 14px 10px 0;
     border-radius: 3px;
@@ -347,7 +347,7 @@ a {
     height: 2px;
     border-radius: 3px;
     background-color: #b3b3b3;
-    width: 200px;
+    width: 42%;
 }
 
 @media only screen  
@@ -457,12 +457,12 @@ a {
     }  
       
     .playerWrapper {
-        width: 780px;
-        margin-left: -390px; /* Half of the width */
+        width: 680px;
+        margin-left: -340px; /* Half of the width */
     }
       
     .player .playback {
-        width: 458px; /*- 780-322 */
+        width: 358px; /*- 680-322 */
         height: 60px;
     }
       
@@ -495,21 +495,25 @@ a {
         width: 30vw;
         height: 30vw;
     }  
-      
+
     .playerWrapper {
-        width: 780px;
-        margin-left: -390px; /* Half of the width */
+        width: 96%;
+        margin-left: -48%; /* Half of the width */
     }
+     
+    .player .track {
+        width: 110px;
+    }  
       
     .player .playback {
-        width: 458px; /*- 780-322 */
+        width: calc(96vw - 272px); /*- 96vw-272 */
         height: 60px;
     }
       
 }
 
 @media only screen  
-    and (max-height: 700px)
+    and (max-height: 540px)
     and (max-width: 530px){
 
         .grid li:nth-of-type(n+3) {
