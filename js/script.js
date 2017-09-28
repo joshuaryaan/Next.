@@ -35,6 +35,10 @@ $(document).ready(function () {
     $(window).resize(function() {
         $("body, .page, .menu").css({ height: window.innerHeight });
     });
+    
+    $(document).bind('touchmove', function(e) {
+        e.preventDefault();
+    });
         
      $("form").submit(function(e){
         e.preventDefault();
