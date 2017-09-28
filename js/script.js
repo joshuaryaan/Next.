@@ -32,6 +32,10 @@ $(document).ready(function () {
     //SEARCH
     $(".grid li").css( "opacity", "0" );
     
+    $(window).resize(function() {
+        $("body, .page, .menu").css({ height: window.innerHeight });
+    });
+        
      $("form").submit(function(e){
         e.preventDefault();
     });
@@ -119,3 +123,10 @@ function newSearch() {
     });
     $(".search").delay(1800).fadeIn(400);
 }
+
+window.addEventListener("orientationchange", function() {
+  if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    document.documentElement.innerHTML = document.documentElement.innerHTML;
+  }
+}, false);
+

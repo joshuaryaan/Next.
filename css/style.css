@@ -469,8 +469,8 @@ a {
 }
 
 @media only screen  
-  and (max-width: 700px)  {  
-     
+  and (max-width: 700px)  { 
+      
     .grid li:nth-of-type(n+5) {
             display: none;
     }   
@@ -494,7 +494,15 @@ a {
     .grid li img {
         width: 30vw;
         height: 30vw;
-    }  
+    } 
+      
+    .grid li .imgWrapper:hover {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.12);
+    }
 
     .player {
         height: 100px
@@ -503,8 +511,8 @@ a {
     .playerWrapper {
         width: 96%;
         margin-left: -48%; /* Half of the width */
-    }
-     
+    } 
+      
     .player .track {
         width: 110px;
     }  
