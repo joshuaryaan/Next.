@@ -51,16 +51,6 @@ $(document).ready(function () {
     };
     
     
-    
-    
-    
-    
-    
-    
-    
-    $(document).bind('touchmove', function(e) {
-        e.preventDefault();
-    });
         
      $("form").submit(function(e){
         e.preventDefault();
