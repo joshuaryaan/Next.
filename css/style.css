@@ -15,9 +15,6 @@ body {
     background-color: #fdfdfd;
     color: #4d4d4d;
     font-family: 'Roboto', sans-serif;
-        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 h1 {
@@ -68,9 +65,6 @@ a {
     overflow: none;
     transform: perspective( 100vw );
     transform-origin: left;
-        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
     -webkit-transition: transform 1s, transform-origin 2s; /* Safari */
     transition: transform 1s, transform-origin 2s;
     background: rgba(255,255,255,1);
@@ -91,9 +85,6 @@ a {
     margin: 0;
     overflow: none;
     background-color: #e6e6e6; 
-        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .menuButton {
