@@ -32,25 +32,9 @@ $(document).ready(function () {
     //SEARCH
     $(".grid li").css( "opacity", "0" );
     
-    
-    if(navigator.platform == 'iPhone' || navigator.platform == 'iPod'){
-        // In Safari, the true version is after "Safari" 
-        if ((verOffset=nAgt.indexOf('Safari'))!=-1) {
-          // Set a variable to use later
-          var mobileSafari = 'Safari';
-        }
-    }
-
-    // If is mobile Safari set window height +60
-    if (mobileSafari == 'Safari') { 
-        // Height + 60px
-        $("body, .page .menu").css('height': window.innerHeight);
-    } else {
-        // Else use the default window height
-        $("body, .page .menu").css('height', "100" + '%');  
-    };
-    
-    
+    $(document).bind('touchmove', function(e) {
+        e.preventDefault();
+    });
         
      $("form").submit(function(e){
         e.preventDefault();
