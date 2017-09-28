@@ -44,7 +44,10 @@ $(document).ready(function () {
     // If is mobile Safari set window height +60
     if (mobileSafari == 'Safari') { 
         // Height + 60px
-        $("body, .page .menu").css('height', window.innerHeight);
+        $("body, .page .menu").css({
+            'height': window.innerHeight,
+            'padding-top': '44' + 'px'                      
+        });
     } else {
         // Else use the default window height
         $("body, .page .menu").css('height', "100" + '%');  
