@@ -35,8 +35,6 @@ $(document).ready(function () {
     $(document).bind('touchmove', function(e) {
         e.preventDefault();
     });
-    
-    window.scrollTo(0,1);
         
      $("form").submit(function(e){
         e.preventDefault();
