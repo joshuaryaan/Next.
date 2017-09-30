@@ -35,6 +35,8 @@ $(document).ready(function () {
     $(document).bind('touchmove', function(e) {
         e.preventDefault();
     });
+    
+    window.scrollTo(0,1);
         
      $("form").submit(function(e){
         e.preventDefault();
@@ -42,7 +44,7 @@ $(document).ready(function () {
     
     $('.fsearch').keypress(function(e){
         if(e.which == 13){
-            $(".search, .fsearch").blur();
+            $(".fsearch").blur();
             $(".search").fadeOut(400);
             $(".grid li").delay(400).each(function(i) {
             $(this).delay(200 * i).animate({opacity: 1}, 700, function() { });
