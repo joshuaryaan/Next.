@@ -8,13 +8,17 @@ Font & Icons: #4d4d4d
 
 body {
     width: 100vw;
-    height: 100vh;
     overflow: hidden;
     margin: 0;
     overflow: none;
     background-color: #fdfdfd;
     color: #4d4d4d;
     font-family: 'Roboto', sans-serif;
+}
+
+body, .menu, .page {
+    height: 100%;
+    min-height: 100%;
 }
 
 h1 {
@@ -60,7 +64,6 @@ a {
     position: absolute;
     z-index: 2;
     width: 100vw;
-    height: 100vh;
     margin: 0;
     overflow: none;
     transform: perspective( 100vw );
@@ -81,7 +84,6 @@ a {
     position: absolute;
     z-index: 1;
     width: 100vw;
-    height: 100vh;
     margin: 0;
     overflow: none;
     background-color: #e6e6e6; 
