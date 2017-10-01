@@ -58,6 +58,7 @@ $(document).ready(function () {
     $(".player .play").click(function() {
         $(".play").hide(); 
         $(".pause").show();
+        audio.load();
         audio.play();
         showDuration();
         showLength();
@@ -80,6 +81,7 @@ $(document).ready(function () {
             next = $('#playlist li:first-child');
         }
         initAudio(next);
+        audio.load();
         audio.play();
         showDuration();
         showLength();
@@ -92,6 +94,7 @@ $(document).ready(function () {
         initAudio($(this));
         $('.play').hide();
         $('.pause').show();
+        audio.load();
         audio.play();
         showDuration();
         showLength();
