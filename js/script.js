@@ -84,10 +84,19 @@ function hidePlayer() {
 function openMenu() {
    $(".open").fadeOut(100);
     $(".close").delay(100).fadeIn(300);
-    $(".page").css({
-        "transform": "perspective( 100vw ) rotateY( 16deg )",
-        "transform-origin": "left" 
-    });
+    
+        if ($(window).width() >= 700) {  
+            $(".page").css({
+                "transform": "perspective( 100vw ) rotateY( 16deg )",
+                "transform-origin": "left" 
+            });
+        } else { 
+            $(".page").css({
+                "transform": "perspective( 100vw ) rotateY( 26deg )",
+                "transform-origin": "left" 
+            });
+        } 
+    
     $(".listContainer ul li").delay(250).each(function(i) {
         $(this).delay(200 * i).fadeIn(700);
     }); 

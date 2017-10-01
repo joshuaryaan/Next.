@@ -475,7 +475,15 @@ a {
 
 @media only screen  
   and (max-width: 700px)  { 
-      
+    
+    .menu .listContainer {
+        width: 37.5vw; /*FIX THIS*/
+        margin-top: 114px;
+    }  
+    
+    .menu ul li {
+        padding: 8px 2px 8px 2px;
+    }  
     .grid li:nth-of-type(n+5) {
             display: none;
     }   
