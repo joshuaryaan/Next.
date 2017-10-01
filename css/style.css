@@ -474,6 +474,34 @@ a {
 }
 
 @media only screen  
+  and (max-width: 1220px) and (min-width: 700px) and ( orientation: portrait)  {
+
+    .grid {
+        width: 520px;
+        margin-left: -260px; /* Half of the width */
+    }
+
+    .grid li {
+        width: 140px;
+        min-height: 140px;
+        margin: 20px 60px; /* In line with percentage decrease */
+    }
+
+    .grid li .imgWrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .grid li img {
+        width: 140px;
+        height: 140px;
+    } 
+      
+
+      
+}
+
+@media only screen  
   and (max-width: 700px)  { 
     
     .menu .listContainer {
@@ -557,5 +585,37 @@ a {
         .grid li:nth-of-type(n+3) {
             display: none;
         }    
+        
+}
+
+/*IPHONE 6 LANDSCAPE*/
+@media only screen  
+    and (max-height: 400px)
+    and (max-width: 700px){
+
+    .grid li:nth-of-type(n+3) {
+        display: none;
+    }
+        
+    .grid {
+        width: 64%;
+        margin-left: -32%; /* Half of the width */
+    }
+
+    .grid li {
+        width: 20vw;
+        min-height: 20vw;
+        margin: 20px 6vw; /* In line with percentage decrease */
+    }
+
+    .grid li .imgWrapper {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .grid li img {
+        width: 20vw;
+        height: 20vw;
+    }
         
 }
