@@ -53,17 +53,88 @@ $(document).ready(function () {
             
         }
     });
-
+    
+    
+    
    //PLAY
     $(".player .play").click(function() {
         $(".play").hide(); 
-        $(".pause").show();     
+        $(".pause").show();
+        audio.play();
+        showDuration();
     }); 
+    
     //PAUSE
     $(".player .pause").click(function() {
         $(".pause").hide(); 
-        $(".play").show();     
-    }); 
+        $(".play").show();
+        audio.pause();
+    });
+    
+    //SKIP
+    $('.player .skip').click(function(){
+        audio.pause();
+        var next = $('#playlist li.active').next();
+        if(next.length == 0){
+            next = $('#playlist li:first-child');
+        }
+        initAudio(next);
+        audio.play();
+        showDuration();
+    });
+    
+    //PLAY FROM GRID
+    $('#playlist li').click(function(){
+        audio.pause();
+        initAudio($(this));
+        $('.play').hide();
+        $('.pause').show();
+        audio.play();
+        showDuration();
+    });
+    
+    //AUDIO TESTS
+
+    //Time/Duration
+    function showDuration(){
+        $(audio).bind('timeupdate',function(){
+            //Get hours and minutes
+            var s = parseInt(audio.currentTime % 60);
+            var m = parseInt(audio.currentTime / 60) % 60;
+            if(s < 10){
+                s = '0'+s;
+            }
+            $('.current').html(m + ':'+ s);
+            var value = 0;
+            if(audio.currentTime > 0){
+                value = Math.floor((100 / audio.duration) * audio.currentTime);
+            }
+            $('.songPosition').css('width',value+'%');
+        });
+    }
+    
+    var audio
+    
+    initAudio($('#playlist li:first-child'));
+    
+    function initAudio(element){
+        var song = element.attr('song');
+        var title = element.attr('title');
+        var cover = element.attr('cover');
+        var artist = element.attr('artist');
+        
+    audio = new Audio('media/'+ song);
+        
+    $('.artist').text(artist);
+	$('.title').text(title);
+        
+    $('img.cover').attr('src','img/covers/'+cover);
+        
+    $('#playlist li').removeClass('active');
+	element.addClass('active');
+    
+    }    
+    
     
 });
 

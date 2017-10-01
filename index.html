@@ -48,22 +48,22 @@
             </datalist>
         </form>
         
-        <ul class="grid">
+        <ul class="grid" id="playlist">
             
-            <li>
+            <li class="active" song="Nikes.mp3" title="Nikes" cover="Blonde.jpg" artist="Frank Ocean">
                 <div class="imgWrapper">
-                    <img src="img/cover.jpg" alt="">
+                    <img src="img/covers/Blonde.jpg" alt="">
                 </div>
-                <p><span><b>Streetcar</b></span></p>
-                <p><span>Daniel Caesar</span></p>
+                <p><span><b>Nikes</b></span></p>
+                <p><span>Frank Ocean</span></p>
             </li>
             
-            <li>
+            <li song="Feels.mp3" title="Feels" cover="Funk.jpg" artist="Calvin Harris">
                 <div class="imgWrapper">
-                    <img src="img/cover2.jpg" alt="">
+                    <img src="img/covers/Funk.jpg" alt="">
                 </div>
-                <p><span><b>Song Name</b></span></p>
-                <p><span>Artist of the Song</span></p>
+                <p><span><b>Feels</b></span></p>
+                <p><span>Calvin Harris</span></p>
             </li>
             
             <li>
@@ -102,9 +102,9 @@
         
         <div class="player">
             <div class="playerWrapper">
-                <img src="img/cover3.jpg" class="albumArt">
+                <img src="img/cover3.jpg" class="albumArt cover">
                 <div class="track">
-                    <p><span><b>Best to You</b></span><br><span>Blood Orange</span></p>
+                    <p><span><b class="title">Best to You</b></span><br><span class="artist">Blood Orange</span></p>
                 </div>
                 <div class="control">
                     <img src="img/play.png" alt="play" class="play">
@@ -112,13 +112,13 @@
                     <img src="img/next.png" alt="skip" class="skip">
                 </div>
                 <div class="playback">
-                    <h6>0:00</h6>
+                    <h6 class="current">0:00</h6>
                     <div class="bar">
                         <div class="songLength">
                             <div class="songPosition"> </div>
                         </div>
                     </div>
-                    <h6>3:25</h6>
+                    <h6 class="duration">0:00</h6>
                 </div>
             </div>
         </div>
