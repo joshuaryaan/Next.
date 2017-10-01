@@ -213,6 +213,10 @@ a {
     opacity: 0;
 }
 
+.grid li:nth-of-type(n+7) {
+        display: none;
+    }
+
 .grid li .imgWrapper {
     width: 180px;
     height: 180px;
@@ -231,10 +235,10 @@ a {
 }
 
 .grid li .imgWrapper:hover {
-    -webkit-transform: scale(1.02);
-    -moz-transform: scale(1.02);
-    -ms-transform: scale(1.02);
-    -o-transform: scale(1.02);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
     box-shadow: 7px 7px 11px rgba(0, 0, 0, 0.11);
 }
 
@@ -274,6 +278,7 @@ a {
     margin: 10px 14px 10px 0;
     border-radius: 3px;
     float: left;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
 }
 
 .player .track {
@@ -352,7 +357,8 @@ a {
     height: 2px;
     border-radius: 3px;
     background-color: #b3b3b3;
-    width: 42%;
+    width: 0%;
+    min-width: 2px;
 }
 
 @media only screen  

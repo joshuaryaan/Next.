@@ -54,14 +54,13 @@ $(document).ready(function () {
         }
     });
     
-    
-    
    //PLAY
     $(".player .play").click(function() {
         $(".play").hide(); 
         $(".pause").show();
         audio.play();
         showDuration();
+        showLength();
     }); 
     
     //PAUSE
@@ -74,6 +73,8 @@ $(document).ready(function () {
     //SKIP
     $('.player .skip').click(function(){
         audio.pause();
+        $(".play").hide(); 
+        $(".pause").show();
         var next = $('#playlist li.active').next();
         if(next.length == 0){
             next = $('#playlist li:first-child');
@@ -81,6 +82,8 @@ $(document).ready(function () {
         initAudio(next);
         audio.play();
         showDuration();
+        showLength();
+        shuffle();
     });
     
     //PLAY FROM GRID
@@ -91,6 +94,8 @@ $(document).ready(function () {
         $('.pause').show();
         audio.play();
         showDuration();
+        showLength();
+        shuffle();
     });
     
     //AUDIO TESTS
@@ -110,6 +115,21 @@ $(document).ready(function () {
                 value = Math.floor((100 / audio.duration) * audio.currentTime);
             }
             $('.songPosition').css('width',value+'%');
+        });
+    }
+    
+    //Time/Duration
+    function showLength(){
+        $(audio).bind('timeupdate',function(){
+            //Get hours and minutes
+            var s = parseInt(audio.duration % 60);
+            if (isNaN(s)) s = 00;
+            var m = parseInt(audio.duration / 60) % 60;
+            if (isNaN(m)) m = 0;
+            if(s < 10){
+                s = '0'+s;
+            }
+            $('.duration').html(m + ':'+ s);
         });
     }
     
@@ -199,10 +219,19 @@ function newSearch() {
             hidePlayer();
         }, 1000);
     $(".listContainer ul li").delay(400).hide(0);
-    $($(".grid li").get().reverse()).each(function(i) {
+    $($(".grid li:visible").get().reverse()).each(function(i) {
         $(this).delay(200 * i).animate({opacity: 0}, 700, function() { });
     });
     $(".search").delay(1800).fadeIn(400);
+}
+
+function shuffle() {
+    var parent = $("#playlist");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+    $('#playlist').find('.active').insertAfter('#playlist li:eq(8)');
 }
 
 window.addEventListener("orientationchange", function() {
