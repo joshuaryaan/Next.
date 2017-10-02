@@ -30,7 +30,7 @@ $(document).ready(function () {
     $(".playerWrapper").hide();
     
     //SEARCH
-    $(".grid li").css( "opacity", "0" );
+    $(".grid").hide();
     
     $(document).bind('touchmove', function(e) {
         e.preventDefault();
@@ -44,6 +44,7 @@ $(document).ready(function () {
         if(e.which == 13){
             $(".fsearch").blur();
             $(".search").fadeOut(400);
+            $(".grid").show();
             $(".grid li").delay(400).each(function(i) {
             $(this).delay(200 * i).animate({opacity: 1}, 700, function() { });
         });
@@ -260,6 +261,7 @@ function newSearch() {
     $($(".grid li:visible").get().reverse()).each(function(i) {
         $(this).delay(200 * i).animate({opacity: 0}, 700, function() { });
     });
+    $(".grid").delay(1800).hide(0);
     $(".search").delay(1800).fadeIn(400);
 }
 
