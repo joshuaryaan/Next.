@@ -71,9 +71,9 @@ $(document).ready(function () {
     //PLAY FROM GRID
     $('#playlist li').click(function(){
         // TRIGGER LOADING EVENT
-        if(audio.currentTime < 1){
+        
             trackLoading();
-        }
+        
         //
         audio.pause();
         initAudio($(this));
@@ -95,9 +95,9 @@ $(document).ready(function () {
     //SKIP
     $('.player .skip').click(function(){
         // TRIGGER LOADING EVENT
-        if(audio.currentTime < 1){
+        
             trackLoading();
-        }
+        
         //
         audio.pause();
         $(".play").hide(); 
@@ -176,9 +176,9 @@ $(document).ready(function () {
     //SKIP WHEN SONG ENDS
     audio.onended = function() {
         // TRIGGER LOADING EVENT
-        if(audio.currentTime < 1){
+        
             trackLoading();
-        }
+        
         //
         audio.pause();
         $(".play").hide(); 
