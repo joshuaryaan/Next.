@@ -285,5 +285,5 @@ function trackLoading() {
 
 function trackLoaded() {
     $(".albumArt").stop();
-    $(".albumArt").clearQueue();
+    //$(".albumArt").clearQueue();
 }
