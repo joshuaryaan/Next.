@@ -286,5 +286,5 @@ function trackLoading() {
 function trackLoaded() {
     $(".albumArt").animate({opacity:'1'}, 600);
     $(".albumArt").finish();
-    trackLoaded.finish();
+    trackLoaded().finish();
 }
