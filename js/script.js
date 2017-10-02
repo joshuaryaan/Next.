@@ -129,7 +129,7 @@ $(document).ready(function () {
             if(audio.currentTime > 0){
                 value = Math.floor((100 / audio.duration) * audio.currentTime);
                 //CEASE LOADING EVENT
-                trackLoaded();
+                $(".albumArt").stop();
                 //
             }
             $('.songPosition').css('width',value+'%');
@@ -281,9 +281,4 @@ window.addEventListener("orientationchange", function() {
 function trackLoading() {
     $(".albumArt").animate({opacity:'-=0.3'}, 600);
     $(".albumArt").animate({opacity:'+=1'}, 600, trackLoading);
-}
-
-function trackLoaded() {
-    $(".albumArt").stop();
-    //$(".albumArt").clearQueue();
 }
