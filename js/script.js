@@ -48,7 +48,7 @@ $(document).ready(function () {
             $(this).delay(200 * i).animate({opacity: 1}, 700, function() { });
         });
             setTimeout(function() {
-                play();
+                showPlayer();
             }, 1200);
             
         }
@@ -56,13 +56,29 @@ $(document).ready(function () {
     
    //PLAY
     $(".player .play").click(function() {
+        // TRIGGER LOADING EVENT
+        if(audio.currentTime < 1){
+            $('.home').html("Loading...");
+        }
+        //
         $(".play").hide(); 
         $(".pause").show();
-        audio.load();
         audio.play();
         showDuration();
         showLength();
     }); 
+    
+    //PLAY FROM GRID
+    $('#playlist li').click(function(){
+        audio.pause();
+        initAudio($(this));
+        $('.play').hide();
+        $('.pause').show();
+        audio.play();
+        showDuration();
+        showLength();
+        shuffle();
+    });
     
     //PAUSE
     $(".player .pause").click(function() {
@@ -81,20 +97,6 @@ $(document).ready(function () {
             next = $('#playlist li:first-child');
         }
         initAudio(next);
-        audio.load();
-        audio.play();
-        showDuration();
-        showLength();
-        shuffle();
-    });
-    
-    //PLAY FROM GRID
-    $('#playlist li').click(function(){
-        audio.pause();
-        initAudio($(this));
-        $('.play').hide();
-        $('.pause').show();
-        audio.load();
         audio.play();
         showDuration();
         showLength();
@@ -102,7 +104,7 @@ $(document).ready(function () {
     });
     
     //AUDIO TESTS
-
+    
     //Time/Duration
     function showDuration(){
         $(audio).bind('timeupdate',function(){
@@ -116,6 +118,9 @@ $(document).ready(function () {
             var value = 0;
             if(audio.currentTime > 0){
                 value = Math.floor((100 / audio.duration) * audio.currentTime);
+                //CEASE LOADING EVENT
+                $('.home').html("Next.");
+                //
             }
             $('.songPosition').css('width',value+'%');
         });
@@ -156,12 +161,27 @@ $(document).ready(function () {
     $('#playlist li').removeClass('active');
 	element.addClass('active');
     
-    }    
+    } 
     
+    //SKIP WHEN SONG ENDS
+    audio.onended = function() {
+        audio.pause();
+        $(".play").hide(); 
+        $(".pause").show();
+        var next = $('#playlist li.active').next();
+        if(next.length == 0){
+            next = $('#playlist li:first-child');
+        }
+        initAudio(next);
+        audio.play();
+        showDuration();
+        showLength();
+        shuffle();
+    };
     
 });
 
-function play() {
+function showPlayer() {
   $(".player").animate({
         bottom: "0px"
       }, 400 );
