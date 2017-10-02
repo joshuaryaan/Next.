@@ -58,7 +58,7 @@ $(document).ready(function () {
     $(".player .play").click(function() {
         // TRIGGER LOADING EVENT
         if(audio.currentTime < 1){
-            $('.home').html("Loading...");
+            trackLoading();
         }
         //
         $(".play").hide(); 
@@ -70,6 +70,11 @@ $(document).ready(function () {
     
     //PLAY FROM GRID
     $('#playlist li').click(function(){
+        // TRIGGER LOADING EVENT
+        if(audio.currentTime < 1){
+            trackLoading();
+        }
+        //
         audio.pause();
         initAudio($(this));
         $('.play').hide();
@@ -89,6 +94,11 @@ $(document).ready(function () {
     
     //SKIP
     $('.player .skip').click(function(){
+        // TRIGGER LOADING EVENT
+        if(audio.currentTime < 1){
+            trackLoading();
+        }
+        //
         audio.pause();
         $(".play").hide(); 
         $(".pause").show();
@@ -119,7 +129,7 @@ $(document).ready(function () {
             if(audio.currentTime > 0){
                 value = Math.floor((100 / audio.duration) * audio.currentTime);
                 //CEASE LOADING EVENT
-                $('.home').html("Next.");
+                trackLoaded();
                 //
             }
             $('.songPosition').css('width',value+'%');
@@ -165,6 +175,11 @@ $(document).ready(function () {
     
     //SKIP WHEN SONG ENDS
     audio.onended = function() {
+        // TRIGGER LOADING EVENT
+        if(audio.currentTime < 1){
+            trackLoading();
+        }
+        //
         audio.pause();
         $(".play").hide(); 
         $(".pause").show();
@@ -263,3 +278,12 @@ window.addEventListener("orientationchange", function() {
   }
 }, false);
 
+function trackLoading() {
+    $(".albumArt").animate({opacity:'-=0.3'}, 600);
+    $(".albumArt").animate({opacity:'+=1'}, 600, trackLoading);
+}
+
+function trackLoaded() {
+    $(".albumArt").animate({opacity:'1'}, 600);
+    $(".albumArt").finish();
+}
