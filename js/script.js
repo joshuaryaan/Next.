@@ -4,12 +4,12 @@ $(document).ready(function () {
     $(".close").hide();
     $(".listContainer ul li").hide();
     
-    $(".open").click(function() {
-        openMenu();
-    });
-    
-    $(".close").click(function() {
-        closeMenu();
+    $(".menuButton").click(function() {
+        if($('.open').is(':visible')) {
+            openMenu();
+        } else {
+            closeMenu();   
+        };
     });
     
     $(".page").click(function() {

@@ -94,13 +94,18 @@ a {
 .menuButton {
     position: fixed;
     z-index: 4;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
 }
 
 .menuButton img {
     height: 12px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
 }
 
 .menu .listContainer {
@@ -444,8 +449,8 @@ a {
 }
 
 @media only screen  
-  and (max-width: 900px)  {  
-     
+  and (max-width: 900px)  {   
+      
     .grid {
         width: 600px;
         margin-left: -300px; /* Half of the width */
@@ -517,7 +522,8 @@ a {
     
     .menu ul li {
         padding: 8px 2px 8px 2px;
-    }  
+    }
+      
     .grid li:nth-of-type(n+5) {
             display: none;
     }   
