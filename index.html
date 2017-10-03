@@ -4,7 +4,7 @@
     <title>Next.</title>
     <meta name="keywords" content="Music, Playlist, Spotify">
     <meta name="description" content="Next is a paired back playlist generator. The perfect blend of control and automation for quick and easy listening.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="stylesheet" href="css/style.css">
@@ -35,18 +35,24 @@
         
         <h1 class="home">Next.</h1>
         
-        <form class="search">
-            <label for="fname">Start a playlist</label>
-            <input type="text" placeholder="Type an artist or song name..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type an artist or song name...'" autocomplete="off" class="fsearch" name="fsearch" list="suggestions">
-            <datalist id="suggestions">
-                <option value="Best to you - Blood Orange">
-                <option value="Multi-Love - Unknown Mortal Orchestra">
-                <option value="Internet Explorer">
-                <option value="Opera">
-                <option value="Safari">
-                <option value="Microsoft Edge">
-            </datalist>
-        </form>
+        <div class="homeWrapper">
+        
+            <span class="intro"></span>
+            
+            <form class="search">
+                <label for="fname">Start a playlist</label>
+                <input type="text" placeholder="Type an artist or song name..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type an artist or song name...'" autocomplete="off" class="fsearch" name="fsearch" list="suggestions">
+                <datalist id="suggestions">
+                    <option value="Best to you - Blood Orange">
+                    <option value="Multi-Love - Unknown Mortal Orchestra">
+                    <option value="Internet Explorer">
+                    <option value="Opera">
+                    <option value="Safari">
+                    <option value="Microsoft Edge">
+                </datalist>
+            </form>
+            
+        </div>
         
         <ul class="grid" id="playlist">
             

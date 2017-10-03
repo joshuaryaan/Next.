@@ -43,7 +43,7 @@ $(document).ready(function () {
     $('.fsearch').keypress(function(e){
         if(e.which == 13){
             $(".fsearch").blur();
-            $(".search").fadeOut(400);
+            $(".homeWrapper").fadeOut(400);
             $(".grid").show();
             $(".grid li").delay(400).each(function(i) {
             $(this).delay(200 * i).animate({opacity: 1}, 700, function() { });
@@ -262,7 +262,7 @@ function newSearch() {
         $(this).delay(200 * i).animate({opacity: 0}, 700, function() { });
     });
     $(".grid").delay(1800).hide(0);
-    $(".search").delay(1800).fadeIn(400);
+    $(".homeWrapper").delay(1800).fadeIn(400);
 }
 
 function shuffle() {
