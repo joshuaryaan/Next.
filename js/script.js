@@ -80,12 +80,33 @@ $(document).ready(function () {
         pauseTrack();
     });
     
+    $(window).keypress(function (e) {
+      if (e.keyCode === 0 || e.keyCode === 32) {
+        e.preventDefault()
+        if($(".grid").is(":visible")) {
+            if($(".play").is(":visible")) {
+                playTrack();
+            } 
+            else {
+                pauseTrack();
+            }
+      }
+      }
+    })
+    
     //SKIP
     $('.player .skip, .menuSkip').click(function(){
         nextTrack();
     });
     
-    //AUDIO TESTS
+    $(window).keydown(function (e) {
+        if($(".grid").is(":visible")) {
+          if (e.keyCode === 39) {
+            e.preventDefault();
+            nextTrack();
+          }
+        }
+    })
     
     //Position
     function showDuration(){
