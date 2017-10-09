@@ -57,66 +57,36 @@ $(document).ready(function () {
     
    //PLAY
     $(".player .play").click(function() {
-        // TRIGGER LOADING EVENT
         if(audio.currentTime < 1){
             trackLoading();
         }
-        //
-        $(".play").hide(); 
-        $(".pause").show();
-        audio.play();
-        showDuration();
-        showLength();
+        playTrack();
     }); 
     
     //PLAY FROM GRID
     $('#playlist li').click(function(){
-        // TRIGGER LOADING EVENT
-        
-            trackLoading();
-        
-        //
+        trackLoading();
         audio.pause();
         initAudio($(this));
-        $('.play').hide();
-        $('.pause').show();
-        audio.play();
-        showDuration();
-        showLength();
-        shuffle();
+        playTrack();
+        audio.onended = function() {
+            nextTrack();
+        };
     });
     
     //PAUSE
     $(".player .pause").click(function() {
-        $(".pause").hide(); 
-        $(".play").show();
-        audio.pause();
+        pauseTrack();
     });
     
     //SKIP
-    $('.player .skip').click(function(){
-        // TRIGGER LOADING EVENT
-        
-            trackLoading();
-        
-        //
-        audio.pause();
-        $(".play").hide(); 
-        $(".pause").show();
-        var next = $('#playlist li.active').next();
-        if(next.length == 0){
-            next = $('#playlist li:first-child');
-        }
-        initAudio(next);
-        audio.play();
-        showDuration();
-        showLength();
-        shuffle();
+    $('.player .skip, .menuSkip').click(function(){
+        nextTrack();
     });
     
     //AUDIO TESTS
     
-    //Time/Duration
+    //Position
     function showDuration(){
         $(audio).bind('timeupdate',function(){
             //Get hours and minutes
@@ -131,13 +101,14 @@ $(document).ready(function () {
                 value = Math.floor((100 / audio.duration) * audio.currentTime);
                 //CEASE LOADING EVENT
                 $(".albumArt").stop();
+                $(".albumArt").animate({opacity: 1}, 700);
                 //
             }
             $('.songPosition').css('width',value+'%');
         });
     }
     
-    //Time/Duration
+    //Duration
     function showLength(){
         $(audio).bind('timeupdate',function(){
             //Get hours and minutes
@@ -154,7 +125,8 @@ $(document).ready(function () {
     
     var audio
     
-    initAudio($('#playlist li:first-child'));
+    //initAudio($('#playlist li:first-child'));
+    initAudio($('#playlist .active'));
     
     function initAudio(element){
         var song = element.attr('song');
@@ -172,14 +144,31 @@ $(document).ready(function () {
     $('#playlist li').removeClass('active');
 	element.addClass('active');
     
-    } 
+    }    
     
     //SKIP WHEN SONG ENDS
     audio.onended = function() {
+        nextTrack();
+    };
+    
+    function playTrack() {
+        $(".play").hide(); 
+        $(".pause").show();
+        audio.play();
+        showDuration();
+        showLength();
+        upcoming();
+    }
+    
+    function pauseTrack() {
+        $(".pause").hide(); 
+        $(".play").show();
+        audio.pause();
+    }
+
+    function nextTrack() {
         // TRIGGER LOADING EVENT
-        
-            trackLoading();
-        
+                trackLoading();
         //
         audio.pause();
         $(".play").hide(); 
@@ -193,7 +182,11 @@ $(document).ready(function () {
         showDuration();
         showLength();
         shuffle();
-    };
+        upcoming();
+        audio.onended = function() {
+            nextTrack();
+        };
+    }    
     
 });
 
@@ -271,7 +264,16 @@ function shuffle() {
     while (divs.length) {
         parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
     }
-    $('#playlist').find('.active').insertAfter('#playlist li:eq(8)');
+    $('#playlist').find('.active').insertAfter('#playlist li:eq(6)');
+}
+
+function upcoming() {
+    //var next = $('#playlist li.active').next();
+    //    if(next.length == 0){
+    //        next = $('#playlist li:first-child');
+    //    };
+    $(".nextSong").html($('#playlist li.active').next().find("p:first-of-type").clone());
+    $(".nextArtist").html($('#playlist li.active').next().find("p:nth-of-type(2)").clone());
 }
 
 window.addEventListener("orientationchange", function() {
