@@ -68,6 +68,7 @@ $(document).ready(function () {
         trackLoading();
         audio.pause();
         initAudio($(this));
+        shuffle();
         playTrack();
         audio.onended = function() {
             nextTrack();
