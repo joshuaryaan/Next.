@@ -26,7 +26,7 @@ body, .menu, .page {
 h1 {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
     letter-spacing: 0.6px;
 }
@@ -34,13 +34,14 @@ h1 {
 h2 {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 15px;
     letter-spacing: 0.5px;
 }
 
 h6 {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
     font-size: 9px;
     font-weight: 400;
 }

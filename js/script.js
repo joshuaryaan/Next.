@@ -166,6 +166,12 @@ $(document).ready(function () {
         var artist = element.attr('artist');
         
     audio = new Audio('media/'+ song);
+    
+    
+
+    $('.songs').each(function () {
+        $(this).append(names);
+    });
         
     $('.artist').text(artist);
 	$('.title').text(title);
@@ -173,9 +179,10 @@ $(document).ready(function () {
     $('img.cover').attr('src','img/covers/'+cover);
         
     $('#playlist li').removeClass('active');
-	element.addClass('active');
+	element.addClass('active');   
+        
+    }
     
-    }    
     
     //SKIP WHEN SONG ENDS
     audio.onended = function() {

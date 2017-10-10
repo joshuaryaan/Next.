@@ -4,13 +4,13 @@
     <title>Next.</title>
     <meta name="keywords" content="Music, Playlist, Spotify">
     <meta name="description" content="Next is a paired back playlist generator. The perfect blend of control and automation for quick and easy listening.">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto" rel="stylesheet">
     <script src="js/jquery-2.2.0.js"></script>
     <script src="js/script.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
 </head>
 <body>
     
@@ -46,24 +46,14 @@
             
             <form class="search">
                 <label for="fname">Start a playlist</label>
-                <input type="text" placeholder="Type an artist or song name..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type an artist or song name...'" autocomplete="off" class="fsearch" name="fsearch" list="suggestions">
-                <datalist id="suggestions">
-                    <option value="Best to you - Blood Orange">
-                    <option value="Multi-Love - Unknown Mortal Orchestra">
-                    <option value="Internet Explorer">
-                    <option value="Opera">
-                    <option value="Safari">
-                    <option value="Microsoft Edge">
-                </datalist>
+                <input type="text" placeholder="Type an artist or song name..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type an artist or song name...'" autocomplete="off" class="fsearch" name="fsearch">
             </form>
             
         </div>
         
-        <div class="upcoming" style="position: absolute; bottom: 0;"></div>
-        
         <ul class="grid" id="playlist">
             
-            <li song="Nikes.mp3" title="Nikes" cover="Blonde.jpg" artist="Frank Ocean">
+            <li song="Nikes.mp3" title="Nikes" cover="Blonde.jpg" artist="Frank Ocean" class="test">
                 <div class="imgWrapper">
                     <img src="img/covers/Blonde.jpg" alt="">
                 </div>
