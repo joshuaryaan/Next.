@@ -15,6 +15,15 @@ $(document).ready(function () {
     $(".page").click(function() {
         closeMenu();
     });
+    
+    $(window).keydown(function (e) {
+        if($(".close").is(":visible")) {
+          if (e.keyCode === 27) {
+            e.preventDefault();
+            closeMenu();
+          }
+        }
+    })
 
     //HOME
     $(".home").click(function() {
@@ -106,7 +115,7 @@ $(document).ready(function () {
             nextTrack();
           }
         }
-    })
+    });
     
     //Position
     function showDuration(){
