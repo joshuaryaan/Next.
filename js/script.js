@@ -285,9 +285,16 @@ function newSearch() {
             "transform-origin": "left" 
         }); 
     }, 0);
-    setTimeout(function() {
+            
+    if($(".pause").is(":visible")) {
+        //nothing
+    } 
+    else {
+        setTimeout(function() {
             hidePlayer();
         }, 1000);
+    }
+    
     $(".listContainer ul li").delay(400).hide(0);
     $($(".grid li:visible").get().reverse()).each(function(i) {
         $(this).delay(200 * i).animate({opacity: 0}, 700, function() { });
