@@ -192,6 +192,7 @@ a {
     padding: 3px 15px;
     border-radius: 3px;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.12);
+    -webkit-appearance: none;
     -webkit-transition: box-shadow 300ms; /* Safari */
     transition: box-shadow 300ms;
 }
