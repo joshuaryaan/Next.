@@ -63,6 +63,10 @@ a {
   text-decoration: inherit; /* no underline */
 }
 
+.hide {
+    display: none;
+}
+
 .page {
     position: absolute;
     z-index: 3;
