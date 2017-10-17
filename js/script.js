@@ -321,11 +321,11 @@ function upcoming() {
     $(".nextArtist").html($('#playlist li.active').next().find("p:nth-of-type(2)").clone());
 }
 
-window.addEventListener("orientationchange", function() {
+/*window.addEventListener("orientationchange", function() {
   if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
     document.documentElement.innerHTML = document.documentElement.innerHTML;
   }
-}, false);
+}, false);*/
 
 function trackLoading() {
     $(".albumArt").animate({opacity:'-=0.3'}, 600);
