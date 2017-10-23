@@ -23,7 +23,9 @@ $(document).ready(function () {
             closeMenu();
           }
         }
-    })
+    });
+    
+    var menuSkip = $(".menuSkip").detach();
 
     //HOME
     $(".home").click(function() {
@@ -195,6 +197,7 @@ $(document).ready(function () {
         audio.play();
         showDuration();
         showLength();
+        $(".menu ul").prepend(menuSkip);
         upcoming();
     }
     
@@ -202,6 +205,9 @@ $(document).ready(function () {
         $(".pause").hide(); 
         $(".play").show();
         audio.pause();
+        //trial this
+        /*$(".albumArt").stop();
+        $(".albumArt").animate({opacity: 1}, 700);*/
     }
 
     function nextTrack() {

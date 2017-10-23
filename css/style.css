@@ -63,10 +63,6 @@ a {
   text-decoration: inherit; /* no underline */
 }
 
-.hide {
-    display: none;
-}
-
 .page {
     position: absolute;
     z-index: 3;
@@ -165,11 +161,6 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index:4;
-}
-
-.intro {
-    max-width: 420px;
-    margin-bottom: 10px;
 }
 
 .search {
