@@ -106,8 +106,12 @@ $(document).ready(function () {
     })
     
     //SKIP
-    $('.player .skip, .menuSkip').click(function(){
+    $('.player .skip').click(function(){
         nextTrack();
+    });
+    
+    $('.menu ul').on('click', '.menuSkip', function() {
+         nextTrack();
     });
     
     $(window).keydown(function (e) {
