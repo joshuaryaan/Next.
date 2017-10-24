@@ -51,20 +51,66 @@ $(document).ready(function () {
         e.preventDefault();
     });
     
-    $('.fsearch').keypress(function(e){
-        if(e.which == 13){
-            $(".fsearch").blur();
-            $(".homeWrapper").fadeOut(400);
-            $(".grid").show();
-            $(".grid li").delay(400).each(function(i) {
-            $(this).delay(200 * i).animate({opacity: 1}, 700, function() { });
-        });
-            setTimeout(function() {
-                showPlayer();
-            }, 1200);
+    var options = {
+        data: [
+                "Nikes - Frank Ocean",
+                "Feels - Calvin Harris",
+                "I'll Call U Back - Erykah Badu",
+                "The Waters - Anderson .Paak",
+                "Incomplete Kisses - Sampha",
+                "Hands Up - Blood Orange",
+                "Am I Wrong - Anderson .Paak",
+                "Best to You - Blood Orange",
+                "Embarcadero - Toro y Moi",
+                "Nights - Frank Ocean",
+                "Girl Like You - Toro y Moi",
+                "Heatstroke - Calvin Harris",
+                "Plastic 100&#176;C - Sampha",
+                "U Used to Call Me - Erykah Badu",
+                "Frank Ocean",
+                "Calvin Harris",
+                "Erykah Badu",
+                "Anderson .Paak",
+                "Blood Orange"
+                ],
+        list: {
+            
+            onClickEvent: function() {
+                var toPlay = $(".selected").text().split(' - ');
+                //alert( toPlay[0] );
+                launchPlaylist();
+                $('#playlist li').removeClass('active');
+                $('#playlist .test').addClass('active');
+                initAudio($('#playlist .active'));
+                playTrack();
+            },
+            
+            match: {
+                enabled: true
+            },
+            
+            showAnimation: {
+                type: "slide", //normal|slide|fade
+                time: 400,
+                callback: function() {}
+            },
+
+            hideAnimation: {
+                type: "slide", //normal|slide|fade
+                time: 400,
+                callback: function() {}
+            }
             
         }
-    });
+    };
+
+    $(".fsearch").easyAutocomplete(options);
+    
+    /*$('.fsearch').keypress(function(e){
+        if(e.which == 13){
+            launchPlaylist();
+        }
+    });*/
     
    //PLAY
     $(".player .play").click(function() {
@@ -195,6 +241,18 @@ $(document).ready(function () {
         nextTrack();
     };
     
+    function launchPlaylist() {
+        $(".fsearch").blur();
+        $(".homeWrapper").fadeOut(400);
+        $(".grid").show();
+        $(".grid li").delay(400).each(function(i) {
+            $(this).delay(200 * i).animate({opacity: 1}, 700, function() { });
+        });
+        setTimeout(function() {
+            showPlayer();
+        }, 1200);
+    }
+    
     function playTrack() {
         $(".play").hide(); 
         $(".pause").show();
@@ -216,7 +274,7 @@ $(document).ready(function () {
 
     function nextTrack() {
         // TRIGGER LOADING EVENT
-                trackLoading();
+        trackLoading();
         //
         audio.pause();
         $(".play").hide(); 
