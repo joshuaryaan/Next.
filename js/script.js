@@ -191,7 +191,7 @@ $(document).ready(function () {
     
     
     //SKIP WHEN SONG ENDS
-    audio.onended = function() {
+    audio.ended = function() {
         nextTrack();
     };
     

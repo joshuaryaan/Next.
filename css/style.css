@@ -147,6 +147,10 @@ a {
     color: black;
 }
 
+.menu .menuSkip {
+    margin-bottom: 8px;
+}
+
 .home {
     position: absolute;
     z-index: 4;
