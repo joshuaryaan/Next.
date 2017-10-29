@@ -81,6 +81,7 @@ $(document).ready(function () {
                 launchPlaylist();
                 $('#playlist li').removeClass('active');
                 $('#playlist .test').addClass('active');
+                audio.pause();
                 initAudio($('#playlist .active'));
                 playTrack();
             },
@@ -140,7 +141,7 @@ $(document).ready(function () {
     $(window).keypress(function (e) {
       if (e.keyCode === 0 || e.keyCode === 32) {
         e.preventDefault()
-        if($(".grid").is(":visible")) {
+        if($(".player").is(":visible")) {
             if($(".play").is(":visible")) {
                 playTrack();
             } 
@@ -161,7 +162,7 @@ $(document).ready(function () {
     });
     
     $(window).keydown(function (e) {
-        if($(".grid").is(":visible")) {
+        if($(".player").is(":visible")) {
           if (e.keyCode === 39) {
             e.preventDefault();
             nextTrack();
