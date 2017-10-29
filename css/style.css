@@ -487,7 +487,7 @@ a {
     .grid li {
         width: 100px;
         min-height: 100px;
-        margin: 20px 50px; /* In line with percentage decrease */
+        margin: 15px 50px; /* In line with percentage decrease */
     }
 
     .grid li .imgWrapper {

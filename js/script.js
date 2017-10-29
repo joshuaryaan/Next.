@@ -190,7 +190,7 @@ $(document).ready(function () {
                 value = Math.floor((100 / audio.duration) * audio.currentTime);
                 //CEASE LOADING EVENT
                 $(".albumArt").stop();
-                $(".albumArt").animate({opacity: 1}, 700);
+                $(".albumArt").animate({opacity: 1}, 300);
                 $(".songLength").stop()
                 $(".songLength").css({backgroundColor:'#e6e6e6'});
                 //
