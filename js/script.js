@@ -2,7 +2,7 @@ $(document).ready(function () {
     
     //MENU
     $(".close").hide();
-    $(".listContainer ul li").hide();
+    //$(".listContainer ul li").hide();
     
     $(".menuButton").click(function() {
         if($('.open').is(':visible')) {
@@ -145,7 +145,7 @@ $(document).ready(function () {
     
     $(window).keypress(function (e) {
       if (e.keyCode === 0 || e.keyCode === 32) {
-        e.preventDefault()
+        //e.preventDefault()
         if($(".player").is(":visible")) {
             if($(".play").is(":visible")) {
                 playTrack();
@@ -297,9 +297,9 @@ $(document).ready(function () {
         showLength();
         shuffle();
         upcoming();
-        audio.onended = function() {
+        /*audio.onended = function() {
             nextTrack();
-        };
+        };*/
     }    
     
 });
@@ -335,7 +335,7 @@ function openMenu() {
         } 
     
     $(".listContainer ul li").delay(250).each(function(i) {
-        $(this).delay(200 * i).fadeIn(700);
+        $(this).delay(200 * i).animate({opacity: 1}, 700, function() { });
     }); 
 }
 
@@ -348,7 +348,7 @@ function closeMenu() {
             "transform-origin": "left" 
         }); 
     }, 0);  
-    $(".listContainer ul li").delay(400).hide(0);
+    $(".listContainer ul li").delay(400).animate({opacity: 0}, 50, function() { });
 }
 
 function newSearch() {
