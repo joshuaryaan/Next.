@@ -37,6 +37,11 @@ $(document).ready(function () {
         newSearch();    
     });
     
+    //BACK TO PLAYLIST
+    $(".albumArt").click(function() {
+        launchPlaylist();    
+    });
+    
     //PLAYER
     $(".playerWrapper").hide();
     
@@ -186,6 +191,8 @@ $(document).ready(function () {
                 //CEASE LOADING EVENT
                 $(".albumArt").stop();
                 $(".albumArt").animate({opacity: 1}, 700);
+                $(".songLength").stop()
+                $(".songLength").css({backgroundColor:'#e6e6e6'});
                 //
             }
             $('.songPosition').css('width',value+'%');
@@ -322,7 +329,7 @@ function openMenu() {
             });
         } else { 
             $(".page").css({
-                "transform": "perspective( 100vw ) rotateY( 26deg )",
+                "transform": "perspective( 100vw ) rotateY( 32deg )",
                 "transform-origin": "left" 
             });
         } 
@@ -399,4 +406,7 @@ function upcoming() {
 function trackLoading() {
     $(".albumArt").animate({opacity:'-=0.3'}, 600);
     $(".albumArt").animate({opacity:'+=1'}, 600, trackLoading);
+    $(".songLength").css({backgroundColor:'#b3b3b3'});
+    $(".songLength").animate({opacity:'-=0.45'}, 600);
+    $(".songLength").animate({opacity:'+=1'}, 600, trackLoading);
 }
