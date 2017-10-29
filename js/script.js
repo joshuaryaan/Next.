@@ -404,7 +404,7 @@ function upcoming() {
 }, false);*/
 
 function trackLoading() {
-    $(".albumArt").animate({opacity:'-=0.3'}, 600);
+    $(".albumArt").animate({opacity:'-=0.5'}, 600);
     $(".albumArt").animate({opacity:'+=1'}, 600, trackLoading);
     $(".songLength").css({backgroundColor:'#b3b3b3'});
     $(".songLength").animate({opacity:'-=0.45'}, 600);
