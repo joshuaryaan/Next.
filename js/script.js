@@ -192,7 +192,7 @@ $(document).ready(function () {
                 $(".albumArt").stop();
                 $(".albumArt").animate({opacity: 1}, 300);
                 $(".songLength").stop()
-                $(".songLength").css({backgroundColor:'#e6e6e6'});
+                $(".songLength").css({backgroundColor:'#e6e6e6', opacity: '1'});
                 //
             }
             $('.songPosition').css('width',value+'%');
@@ -242,7 +242,6 @@ $(document).ready(function () {
 	element.addClass('active');   
         
     }
-    
     
     //SKIP WHEN SONG ENDS
     audio.ended = function() {
@@ -295,7 +294,11 @@ $(document).ready(function () {
         audio.play();
         showDuration();
         showLength();
-        shuffle();
+        $(".grid").animate({opacity: 0}, 400, function() { });
+        setTimeout(function() {
+            shuffle();
+        }, 400);
+        $(".grid").animate({opacity: 1}, 600, function() { });
         upcoming();
         audio.onended = function() {
             nextTrack();
@@ -371,7 +374,7 @@ function newSearch() {
         }, 1000);
     }
     
-    $(".listContainer ul li").delay(400).hide(0);
+    $(".listContainer ul li").delay(400).animate({opacity: 0}, 50, function() { });
     $($(".grid li:visible").get().reverse()).each(function(i) {
         $(this).delay(200 * i).animate({opacity: 0}, 700, function() { });
     });
@@ -380,18 +383,18 @@ function newSearch() {
 }
 
 function shuffle() {
-    //$(".grid").animate({opacity: 0}, 400, function() { });
+    //$(".grid").animate({opacity: 0}, 200, function() { });
     var parent = $("#playlist");
     var divs = parent.children();
-    while (divs.length) {
-        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-    }
+        while (divs.length) {
+            parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+        }
     $('#playlist').find('.active').insertAfter('#playlist li:eq(6)');
-    //$(".grid").animate({opacity: 1}, 800, function() { });
+    //$(".grid").delay(400).animate({opacity: 1}, 200, function() { });
 }
 
 function upcoming() {
-    //var next = $('#playlist li.active').next();
+    //var kip = $('#playlist li.active').next();
     //    if(next.length == 0){
     //        next = $('#playlist li:first-child');
     //    };
