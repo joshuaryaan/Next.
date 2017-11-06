@@ -76,20 +76,40 @@ $(document).ready(function () {
                 "Calvin Harris",
                 "Erykah Badu",
                 "Anderson .Paak",
-                "Blood Orange"
+                "Blood Orange",
+                "Toro y Moi"
                 ],
         list: {
             
             onClickEvent: function() {
-                var toPlay = $(".selected").text().split(' - ');
+                var str = $(".selected").text();
+                if (str.indexOf('-') >-1) {
+                    var toPlay = str.split(' - '); 
+                    //alert( "Song: " + toPlay[0]);
+                    launchPlaylist();
+                    $('#playlist li').removeClass('active');
+                    $('#playlist li[title="'+toPlay[0]+'"]').addClass('active');
+                    audio.pause();
+                    initAudio($('#playlist li[title="'+toPlay[0]+'"]'));
+                    playTrack();
+                    trackLoading();
+                } 
+                else {
+                    var toPlay = str ; 
+                    //alert( "Artist: " + toPlay );
+                    launchPlaylist();
+                    $('#playlist li').removeClass('active');
+                    $('#playlist li[artist="'+toPlay+'"]').addClass('active');
+                    audio.pause();
+                    initAudio($('#playlist li[artist="'+toPlay+'"]'));
+                    playTrack();
+                    trackLoading();
+                };
+                
+                
+                
                 //alert( toPlay[0]);
-                launchPlaylist();
-                $('#playlist li').removeClass('active');
-                $('#playlist li[title="'+toPlay[0]+'"]').addClass('active');
-                audio.pause();
-                initAudio($('#playlist li[title="'+toPlay[0]+'"]'));
-                playTrack();
-                trackLoading();
+                
             },
             
             match: {
