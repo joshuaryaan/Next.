@@ -113,12 +113,14 @@ a {
 
 .menu .listContainer {
     width: 24.5vw; /*FIX THIS*/
-    margin-top: 120px;
+    margin-top: 100px;
     float: right;
     display: flex;
     justify-content: center;
     -webkit-transition: flex-grow 800ms; /* Safari */
     transition: flex-grow 800ms;
+    max-height: calc(100vh - 100px);
+    overflow: scroll;
 }
 
 .menu ul {
@@ -144,11 +146,29 @@ a {
 
 .menu li p {
     line-height: 1.5;
+    display: block;
+}
+
+.menu .menuSkip p {
+    line-height: 1.5;
     display: inline;
 }
 
-.menu ul li:hover{
+.menu ul li:hover > :not(span){
     color: black;
+}
+
+.menu .historyList {
+    display: none;
+    margin-top: 12px;
+}
+
+.menu .historyList p:nth-of-type(even) {
+    margin-bottom: 6px;
+}
+
+.menu .historyList p:nth-child(1n+11){
+    display: none;
 }
 
 .home {

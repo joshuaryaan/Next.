@@ -37,6 +37,10 @@ $(document).ready(function () {
         newSearch();    
     });
     
+    $(".menu .history").click(function() {
+        $(".historyList").toggle();  
+    });
+    
     //BACK TO PLAYLIST
     $(".albumArt").click(function() {
         launchPlaylist();    
@@ -93,6 +97,7 @@ $(document).ready(function () {
                     initAudio($('#playlist li[title="'+toPlay[0]+'"]'));
                     playTrack();
                     trackLoading();
+                    $('.active').find("p").clone().prependTo(".historyList");
                 } 
                 else {
                     var toPlay = str ; 
@@ -104,6 +109,7 @@ $(document).ready(function () {
                     initAudio($('#playlist li[artist="'+toPlay+'"]'));
                     playTrack();
                     trackLoading();
+                    $('.active').find("p").clone().prependTo(".historyList");
                 };
                 
                 
@@ -154,6 +160,7 @@ $(document).ready(function () {
         initAudio($(this));
         shuffle();
         playTrack();
+        $('.active').find("p").clone().prependTo(".historyList");
         audio.onended = function() {
             nextTrack();
         };
@@ -319,11 +326,32 @@ $(document).ready(function () {
         setTimeout(function() {
             shuffle();
         }, 400);
-        $(".grid").animate({opacity: 1}, 600, function() { });
         upcoming();
+        $(".grid").animate({opacity: 1}, 600, function() { });
         audio.onended = function() {
             nextTrack();
         };
+        $('.active').find("p").clone().prependTo(".historyList");
+    }
+    
+    function shuffle() {
+        //$(".grid").animate({opacity: 0}, 200, function() { });
+        var parent = $("#playlist");
+        var divs = parent.children();
+            while (divs.length) {
+                parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+            }
+        $('#playlist').find('.active').insertAfter('#playlist li:eq(6)');
+        //$(".grid").delay(400).animate({opacity: 1}, 200, function() { });
+    }
+
+    function upcoming() {
+        //var kip = $('#playlist li.active').next();
+        //    if(next.length == 0){
+        //        next = $('#playlist li:first-child');
+        //    };
+        $(".nextSong").html($('.active').next().find("p:first-of-type").clone());
+        $(".nextArtist").html($('.active').next().find("p:nth-of-type(2)").clone());
     }
     
     function openMenu() {
@@ -357,6 +385,7 @@ $(document).ready(function () {
             }); 
         }, 0);  
         $(".listContainer ul li").delay(400).animate({opacity: 0}, 50, function() { });
+        $(".historyList").delay(600).hide(0);
     }
     
 });
@@ -403,25 +432,6 @@ function newSearch() {
     $(".homeWrapper").delay(1800).fadeIn(400);
 }
 
-function shuffle() {
-    //$(".grid").animate({opacity: 0}, 200, function() { });
-    var parent = $("#playlist");
-    var divs = parent.children();
-        while (divs.length) {
-            parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-        }
-    $('#playlist').find('.active').insertAfter('#playlist li:eq(6)');
-    //$(".grid").delay(400).animate({opacity: 1}, 200, function() { });
-}
-
-function upcoming() {
-    //var kip = $('#playlist li.active').next();
-    //    if(next.length == 0){
-    //        next = $('#playlist li:first-child');
-    //    };
-    $(".nextSong").html($('#playlist li.active').next().find("p:first-of-type").clone());
-    $(".nextArtist").html($('#playlist li.active').next().find("p:nth-of-type(2)").clone());
-}
 
 /*window.addEventListener("orientationchange", function() {
   if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
