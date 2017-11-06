@@ -82,12 +82,12 @@ $(document).ready(function () {
             
             onClickEvent: function() {
                 var toPlay = $(".selected").text().split(' - ');
-                //alert( toPlay[0] );
+                alert( toPlay[0]);
                 launchPlaylist();
                 $('#playlist li').removeClass('active');
-                $('#playlist li[title=' + toPlay[0] + ']').addClass('active');
+                $('#playlist li[title="'+toPlay[0]+'"]').addClass('active');
                 audio.pause();
-                initAudio($('#playlist li[title=' + toPlay[0] + ']'));
+                initAudio($('#playlist li[title="'+toPlay[0]+'"]'));
                 playTrack();
             },
             
