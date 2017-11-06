@@ -89,6 +89,7 @@ $(document).ready(function () {
                 audio.pause();
                 initAudio($('#playlist li[title="'+toPlay[0]+'"]'));
                 playTrack();
+                trackLoading();
             },
             
             match: {
