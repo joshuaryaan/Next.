@@ -85,9 +85,9 @@ $(document).ready(function () {
                 //alert( toPlay[0] );
                 launchPlaylist();
                 $('#playlist li').removeClass('active');
-                $('#playlist .test').addClass('active');
+                $('#playlist li[title=' + toPlay[0] + ']').addClass('active');
                 audio.pause();
-                initAudio($('#playlist .active'));
+                initAudio($('#playlist li[title=' + toPlay[0] + ']'));
                 playTrack();
             },
             
