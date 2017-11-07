@@ -113,13 +113,13 @@ a {
 
 .menu .listContainer {
     width: 24.5vw; /*FIX THIS*/
-    margin-top: 90px;
+    margin-top: 100px;
     float: right;
     display: flex;
     justify-content: center;
     -webkit-transition: flex-grow 800ms; /* Safari */
     transition: flex-grow 800ms;
-    max-height: calc(100vh - 90px);
+    max-height: calc(100vh - 100px);
     overflow: scroll;
 }
 
@@ -140,17 +140,17 @@ a {
     opacity: 0;
 }
 
-.menu li p:first-of-type {
-    margin-top: 6px
+.menu li .subheading {
+    margin: 6px 0 12px 0;
 }
 
 .menu li p {
-    line-height: 1.5;
+    line-height: 1.8;
     display: block;
 }
 
 .menu .menuSkip p {
-    line-height: 1.5;
+    line-height: 1.8;
     display: inline;
 }
 
@@ -500,6 +500,10 @@ a {
         display: block;
     }  
       
+    .menu .menuSkip p {
+        display: block;
+    }
+      
     .grid {
         width: 600px;
         margin-left: -300px; /* Half of the width */
@@ -568,7 +572,8 @@ a {
     }  
     
     .menu ul li {
-        padding: 8px 2px 8px 2px;
+        padding: 8px 2px 4px 2px;
+        margin-bottom: 6px;
     }
       
     .grid li:nth-of-type(n+5) {
