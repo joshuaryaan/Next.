@@ -98,6 +98,7 @@ $(document).ready(function () {
                     playTrack();
                     trackLoading();
                     $('.active').find("p").clone().prependTo(".historyList");
+                    $(".placeholder").hide();
                 } 
                 else {
                     var toPlay = str ; 
@@ -110,6 +111,7 @@ $(document).ready(function () {
                     playTrack();
                     trackLoading();
                     $('.active').find("p").clone().prependTo(".historyList");
+                    $(".placeholder").hide();
                 };
                 
                 

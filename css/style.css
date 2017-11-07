@@ -113,13 +113,13 @@ a {
 
 .menu .listContainer {
     width: 24.5vw; /*FIX THIS*/
-    margin-top: 100px;
+    margin-top: 90px;
     float: right;
     display: flex;
     justify-content: center;
     -webkit-transition: flex-grow 800ms; /* Safari */
     transition: flex-grow 800ms;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 90px);
     overflow: scroll;
 }
 
@@ -160,7 +160,6 @@ a {
 
 .menu .historyList {
     display: none;
-    margin-top: 12px;
 }
 
 .menu .historyList p:nth-of-type(even) {
