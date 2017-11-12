@@ -163,6 +163,17 @@ a {
 }
 
 .menu .historyList p:nth-of-type(even) {
+
+}
+
+.menu .historyList p:nth-of-type(odd) {
+    margin-right: 4px;
+    clear: both
+}
+
+.menu .historyList p {
+    display: inline-block;
+    float: left;
     margin-bottom: 6px;
 }
 
@@ -574,6 +585,16 @@ a {
     .menu ul li {
         padding: 8px 2px 4px 2px;
         margin-bottom: 6px;
+    }
+      
+    .menu .historyList p {
+        display: block;
+        float: none;
+        margin-bottom: 0px;
+    }
+      
+    .menu .historyList p:nth-of-type(even) {
+        margin-bottom: 8px;
     }
       
     .grid li:nth-of-type(n+5) {

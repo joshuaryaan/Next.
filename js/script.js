@@ -75,7 +75,7 @@ $(document).ready(function () {
                 "Girl Like You - Toro y Moi",
                 "Heatstroke - Calvin Harris",
                 "Plastic 100&#176;C - Sampha",
-                "U Used to Call Me - Erykah Badu",
+                "U Use to Call Me - Erykah Badu",
                 "Frank Ocean",
                 "Calvin Harris",
                 "Erykah Badu",
