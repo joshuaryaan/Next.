@@ -160,7 +160,12 @@ $(document).ready(function () {
         trackLoading();
         audio.pause();
         initAudio($(this));
-        shuffle();
+        $(".grid").animate({opacity: 0}, 400, function() { });
+        setTimeout(function() {
+            shuffle();
+        }, 400);
+        //upcoming();
+        $(".grid").animate({opacity: 1}, 600, function() { });
         playTrack();
         $('.active').find("p").clone().prependTo(".historyList");
         audio.onended = function() {

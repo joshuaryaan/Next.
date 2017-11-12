@@ -212,7 +212,7 @@ a {
     font-size: 11px;
     border: none;
     padding: 3px 15px;
-    border-radius: 3px;
+    border-radius: 6px;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.12);
     -webkit-appearance: none;
     -webkit-transition: box-shadow 300ms; /* Safari */
@@ -271,7 +271,7 @@ a {
     width: 180px;
     height: 180px;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 6px;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.12);
     cursor: pointer;
 }
