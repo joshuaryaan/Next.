@@ -593,6 +593,10 @@ a {
 @media only screen  
   and (max-width: 700px)  { 
     
+    h1 {
+        font-weight: 400;
+      }
+      
     .menu .listContainer {
         width: 45vw; /*FIX THIS*/
         margin-top: 110px;
