@@ -138,6 +138,12 @@ a {
     padding: 8px;
     cursor: pointer;
     opacity: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .menu li .subheading {
@@ -179,6 +185,16 @@ a {
 
 .menu .historyList p:nth-child(1n+11){
     display: none;
+}
+
+.menu .disclaimerNote {
+    display: none;
+}
+
+.menu .disclaimerNote p {
+    width: 180px;
+    font-size: 9px;
+    position: absolute;
 }
 
 .home {
@@ -598,8 +614,12 @@ a {
     }
       
     .grid li:nth-of-type(n+5) {
-            display: none;
+        display: none;
     }   
+      
+    .menu .disclaimerNote p {
+        width: 140px;
+    }
       
     .grid {
         width: 84%;

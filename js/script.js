@@ -41,6 +41,10 @@ $(document).ready(function () {
         $(".historyList").toggle();  
     });
     
+    $(".menu .disclaimer").click(function() {
+        $(".disclaimerNote").toggle();  
+    });
+    
     //BACK TO PLAYLIST
     $(".albumArt").click(function() {
         launchPlaylist();    
@@ -102,6 +106,9 @@ $(document).ready(function () {
                     trackLoading();
                     $('.active').find("p").clone().prependTo(".historyList");
                     $(".placeholder").hide();
+                    audio.onended = function() {
+                        nextTrack();
+                    };
                 } 
                 else {
                     var toPlay = str ; 
@@ -115,6 +122,9 @@ $(document).ready(function () {
                     trackLoading();
                     $('.active').find("p").clone().prependTo(".historyList");
                     $(".placeholder").hide();
+                    audio.onended = function() {
+                        nextTrack();
+                    };
                 };
                 
                 
