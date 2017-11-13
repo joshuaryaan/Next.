@@ -76,12 +76,15 @@ $(document).ready(function () {
                 "Heatstroke - Calvin Harris",
                 "Plastic 100&#176;C - Sampha",
                 "U Use to Call Me - Erykah Badu",
+                "Disciples - Tame Impala",
+                "Gossip - Tame Impala",
                 "Frank Ocean",
                 "Calvin Harris",
                 "Erykah Badu",
                 "Anderson .Paak",
                 "Blood Orange",
-                "Toro y Moi"
+                "Toro y Moi",
+                "Tame Impala"
                 ],
         list: {
             
