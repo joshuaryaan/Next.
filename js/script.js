@@ -82,13 +82,16 @@ $(document).ready(function () {
                 "U Use to Call Me - Erykah Badu",
                 "Disciples - Tame Impala",
                 "Gossip - Tame Impala",
+                "Brazil - Declan McKenna",
+                "Bethlehem - Declan Mckenna",
                 "Frank Ocean",
                 "Calvin Harris",
                 "Erykah Badu",
                 "Anderson .Paak",
                 "Blood Orange",
                 "Toro y Moi",
-                "Tame Impala"
+                "Tame Impala",
+                "Declan McKenna"
                 ],
         list: {
             
